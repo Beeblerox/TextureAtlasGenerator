@@ -103,6 +103,58 @@ package atlasgen
 			return (nodes[nodeName] != null);
 		}
 		
+		public function getNodeByKey(key:String):Node
+		{
+			if (hasNodeWithName(key) == true)
+			{
+				return nodes[key];
+			}
+			
+			return null;
+		}
+		
+		public function getNodeByBitmap(bitmap:BitmapData):Node
+		{
+			for each (var node:Node in nodes)
+			{
+				if (node.item == bitmap)
+				{
+					return node;
+				}
+			}
+			
+			return null;
+		}
+		
+		public function addNodes(bitmaps:Array, keys:Array):Boolean
+		{
+			var numKeys:int = keys.length;
+			var numBitmaps:int = bitmaps.length;
+			
+			if (numBitmaps != numKeys)
+			{
+				return false;
+			}
+			
+			var sortedBitmaps:Array = bitmaps.slice();
+			sortedBitmaps.sortOn(["width", "height"], Array.DESCENDING | Array.NUMERIC);
+			
+			var node:Node;
+			var result:Boolean = true;
+			var index:int;
+			for (var i:int = 0; i < numBitmaps; i++)
+			{
+				index = bitmaps.indexOf(sortedBitmaps[i]);
+				node = addNode(sortedBitmaps[i], keys[index]);
+				if (node == null)
+				{
+					result = false;
+				}
+			}
+			
+			return result;
+		}
+		
 		public function destoy():void
 		{
 			deleteSubtree(root);
@@ -123,11 +175,11 @@ package atlasgen
 		}
 		
 		// Внутренний итератор для нисходящего обхода в глубину, использующий стек для хранения информации об еще не пройденных поддеревьях
-		public function findNodeToInsert(insertWidth:int, insertHeight:int):Node
+		private function findNodeToInsert(insertWidth:int, insertHeight:int):Node
 		{
 			// Стек для хранения узлов
 			var stack:Vector.<Node> = new Vector.<Node>();
-			// Текущая вершина
+			// Текущий узел
 			var current:Node = root;
 			// Основной цикл
 			while (true)

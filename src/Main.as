@@ -63,7 +63,7 @@ package
 			
 			atlas = new Tree(256, 256, 1, 1);
 			
-			atlas.addNode(Bitmap(new Bot()).bitmapData, "Bot");
+			/*atlas.addNode(Bitmap(new Bot()).bitmapData, "Bot");
 			atlas.addNode(Bitmap(new Bot_Bullet()).bitmapData, "Bot_Bullet");
 			atlas.addNode(Bitmap(new Bullet()).bitmapData, "Bullet");
 			atlas.addNode(Bitmap(new Crate()).bitmapData, "Crate");
@@ -79,10 +79,53 @@ package
 			atlas.addNode(Bitmap(new Spaceman()).bitmapData, "Spaceman");
 			atlas.addNode(Bitmap(new Spawner()).bitmapData, "Spawner");
 			atlas.addNode(Bitmap(new Spawner_Gibs()).bitmapData, "Spawner_Gibs");
-			atlas.addNode(Bitmap(new Tech_Tiles()).bitmapData, "Tech_Tiles");
+			atlas.addNode(Bitmap(new Tech_Tiles()).bitmapData, "Tech_Tiles");*/
+			
+			atlas.addNodes([	Bitmap(new Bot()).bitmapData,
+								Bitmap(new Bot_Bullet()).bitmapData,
+								Bitmap(new Bullet()).bitmapData,
+								Bitmap(new Crate()).bitmapData,
+								Bitmap(new Dirt()).bitmapData,
+								Bitmap(new Dirt_Top()).bitmapData,
+								Bitmap(new Elevator()).bitmapData,
+								Bitmap(new Empty_Tiles()).bitmapData,
+								Bitmap(new FlixelLogo()).bitmapData,
+								Bitmap(new Gibs()).bitmapData,
+								Bitmap(new Img_Tiles()).bitmapData,
+								Bitmap(new Jet()).bitmapData,
+								Bitmap(new MiniFrame()).bitmapData,
+								Bitmap(new Spaceman()).bitmapData,
+								Bitmap(new Spawner()).bitmapData,
+								Bitmap(new Spawner_Gibs()).bitmapData,
+								Bitmap(new Tech_Tiles()).bitmapData
+							], 
+							
+							
+							["Bot",
+							"Bot_Bullet",
+							"Bullet",
+							"Crate",
+							"Dirt",
+							"Dirt_Top",
+							"Elevator",
+							"Empty_Tiles",
+							"FlixelLogo",
+							"Gibs",
+							"Img_Tiles",
+							"Jet",
+							"MiniFrame",
+							"Spaceman",
+							"Spawner",
+							"Spawner_Gibs",
+							"Tech_Tiles"
+							]);
 			
 			var bm:Bitmap = new Bitmap(atlas.atlasBitmapData);
 			addChild(bm);
+			
+			var logo:Bitmap = new Bitmap(atlas.getNodeByKey("Crate").item);
+			logo.y = logo.x = 150;
+			addChild(logo);
 		}
 		
 	}
