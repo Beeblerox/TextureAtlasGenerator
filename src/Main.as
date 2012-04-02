@@ -81,7 +81,7 @@ package
 			atlas.addNode(Bitmap(new Spawner_Gibs()).bitmapData, "Spawner_Gibs");
 			atlas.addNode(Bitmap(new Tech_Tiles()).bitmapData, "Tech_Tiles");*/
 			
-			atlas.addNodes([	Bitmap(new Bot()).bitmapData,
+			/*atlas.addNodes([	Bitmap(new Bot()).bitmapData,
 								Bitmap(new Bot_Bullet()).bitmapData,
 								Bitmap(new Bullet()).bitmapData,
 								Bitmap(new Crate()).bitmapData,
@@ -118,7 +118,27 @@ package
 							"Spawner",
 							"Spawner_Gibs",
 							"Tech_Tiles"
-							]);
+							]);*/
+			
+			atlas.createQueue();
+			atlas.addToQueue(Bitmap(new Bot()).bitmapData, "Bot");
+			atlas.addToQueue(Bitmap(new Bot_Bullet()).bitmapData, "Bot_Bullet");
+			atlas.addToQueue(Bitmap(new Bullet()).bitmapData, "Bullet");
+			atlas.addToQueue(Bitmap(new Crate()).bitmapData, "Crate");
+			atlas.addToQueue(Bitmap(new Dirt()).bitmapData, "Dirt");
+			atlas.addToQueue(Bitmap(new Dirt_Top()).bitmapData, "Dirt_Top");
+			atlas.addToQueue(Bitmap(new Elevator()).bitmapData, "Elevator");
+			atlas.addToQueue(Bitmap(new Empty_Tiles()).bitmapData, "Empty_Tiles");
+			atlas.addToQueue(Bitmap(new FlixelLogo()).bitmapData, "FlixelLogo");
+			atlas.addToQueue(Bitmap(new Gibs()).bitmapData, "Gibs");
+			atlas.addToQueue(Bitmap(new Img_Tiles()).bitmapData, "Img_Tiles");
+			atlas.addToQueue(Bitmap(new Jet()).bitmapData, "Jet");
+			atlas.addToQueue(Bitmap(new MiniFrame()).bitmapData, "MiniFrame");
+			atlas.addToQueue(Bitmap(new Spaceman()).bitmapData, "Spaceman");
+			atlas.addToQueue(Bitmap(new Spawner()).bitmapData, "Spawner");
+			atlas.addToQueue(Bitmap(new Spawner_Gibs()).bitmapData, "Spawner_Gibs");
+			atlas.addToQueue(Bitmap(new Tech_Tiles()).bitmapData, "Tech_Tiles");
+			atlas.generateAtlasFromQueue();
 			
 			var bm:Bitmap = new Bitmap(atlas.atlasBitmapData);
 			addChild(bm);
@@ -126,6 +146,11 @@ package
 			var logo:Bitmap = new Bitmap(atlas.getNodeByKey("Crate").item);
 			logo.y = logo.x = 150;
 			addChild(logo);
+			
+		//	atlas.resize(512, 512);
+		//	bm.bitmapData = atlas.atlasBitmapData;
+		//	atlas.clear();
+		//	atlas.rebuildAtlas();
 		}
 		
 	}
