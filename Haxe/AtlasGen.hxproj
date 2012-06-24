@@ -4,10 +4,10 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="FlixelNME.nmml" />
+    <movie path="AtlasGen.nmml" />
     <movie fps="30" />
-    <movie width="800" />
-    <movie height="600" />
+    <movie width="256" />
+    <movie height="256" />
     <movie version="3" />
     <movie minorVersion="0" />
     <movie platform="NME" />
@@ -16,7 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="Source" />
-    <class path="Export\flash\haxe" />
+    <class path="Export/flash/haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -43,9 +43,7 @@
     <!-- example: <hidden path="..." /> -->
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>haxelib run nme test "FlixelNME.nmml" android
-haxelib run nme test "FlixelNME.nmml" neko
-haxelib run nme test "FlixelNME.nmml" windows</preBuildCommand>
+  <preBuildCommand />
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->

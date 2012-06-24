@@ -31,7 +31,7 @@ class Node
 		return (item == null && left == null && right == null);
 	}
 	
-	public function canPlace(width:int, height:int):Bool
+	public function canPlace(width:Int, height:Int):Bool
 	{
 		return (rect.width >= width && rect.height >= height);
 	}

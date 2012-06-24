@@ -1,0 +1,13 @@
+-main ApplicationMain 
+-D fdb
+-D nme_install_tool
+-cp Source
+-lib nme
+-D web
+--connect 6000
+-swf-version 10
+-swf9 Export/flash/bin/AtlasGenDemo.swf
+-swf-header 512:256:30:000000
+-cp Export/flash/haxe
+--no-inline
+-debug

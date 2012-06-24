@@ -3,8 +3,8 @@
 	
 	<app title="Atlas Generator Demo" file="AtlasGenDemo" main="Main" version="0.0.1" company="Zaphod" />
 	
-	<window width="256" height="256" fps="30" background="0x000000" orientation="portrait" resizable="true" if="target_flash" />
-	<window width="256" height="256" fps="30" background="0x000000" orientation="landscape" fullscreen="true" hardware="true" unless="target_flash" />
+	<window width="512" height="256" fps="30" background="0x000000" orientation="portrait" resizable="true" if="target_flash" />
+	<window width="512" height="256" fps="30" background="0x000000" orientation="landscape" fullscreen="true" hardware="true" unless="target_flash" />
  	
 	<set name="BUILD_DIR" value="Export" />
 	
@@ -16,14 +16,10 @@
 	
 	<assets path="Assets" rename="assets" />
 	
-	<assets path="assets/data" include="*.ttf" type="font" />
 	<assets path="assets" include="*.fgr" type="text" />
 	<assets path="assets" include="*.csv" type="text" />
 	<assets path="assets" include="*.txt" type="text" />
 	<assets path="assets" include="*.png" type="image" />
-	<assets path="assets/data" include="*.png" type="image" />
-	<assets path="assets/data/vcr" include="*.png" type="image" />
-	<assets path="assets/data/vis" include="*.png" type="image" />
 	
 	<!--<icon name="Assets/nme.svg" /> -->
 	

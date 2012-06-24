@@ -220,7 +220,7 @@ class Tree
 			return false;
 		}
 		
-		var sortedBitmaps:Array<BitmapData> = bitmaps.slice();
+		var sortedBitmaps:Array<BitmapData> = bitmaps.slice(0, bitmaps.length);
 		sortedBitmaps.sort(bitmapSorter);
 		
 		var node:Node;
@@ -253,12 +253,15 @@ class Tree
 	}
 	
 	// TODO: Finish this sort function: sortOn(["width", "height"], Array.DESCENDING | Array.NUMERIC);
-	/*
 	private function bitmapSorter(bmd1:BitmapData, bmd2:BitmapData):Int
 	{
-		if (bmd2.width > bmd1.width)
+		if (bmd2.width == bmd1.width)
 		{
-			if (bmd2.height > bmd1.height)
+			if (bmd2.height == bmd1.height)
+			{
+				return 0;
+			}
+			else if (bmd2.height > bmd1.height)
 			{
 				return 1;
 			}
@@ -268,9 +271,14 @@ class Tree
 			}
 		}
 		
-		return 0;
+		if (bmd2.width > bmd1.width)
+		{
+			return 1;
+		}
+		
+		return -1;
 	}
-	*/
+	
 	/**
 	 * Creates new "queue" for adding new nodes
 	 */
